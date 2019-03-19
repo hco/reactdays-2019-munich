@@ -1,5 +1,6 @@
 import React from 'react';
 import MLI, { MessageListItem } from './components/MessageListItem';
+import MessageCompose from './components/MessageCompose';
 import { Message } from './domain/Message';
 
 export function App() {
@@ -13,6 +14,7 @@ export function App() {
   return (
     <main>
       <MessageListItem {...message1} />
+      <MessageCompose />
     </main>
   );
 }
