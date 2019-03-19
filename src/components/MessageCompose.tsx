@@ -1,11 +1,16 @@
 import React, { FormEvent, useState } from 'react';
 
-const MessageCompose = () => {
+interface Props {
+  onSubmit: (value: string) => void;
+}
+
+const MessageCompose = ({ onSubmit }: Props) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(inputValue);
+    onSubmit(inputValue);
+    setInputValue('');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
