@@ -1,14 +1,12 @@
 import React from 'react';
+import { Message } from '../domain/Message';
 
-interface Props {
-  opinion: string;
-  name?: string;
-}
+interface Props extends Message {}
 
-export const MessageListItem = ({ name, opinion }: Props): JSX.Element => (
+export const MessageListItem = ({ message, author }: Props): JSX.Element => (
   <article>
-    {opinion}
-    {name ? <footer>{name.toUpperCase()}</footer> : null}
+    {message}
+    {author ? <footer>{author.toUpperCase()}</footer> : null}
   </article>
 );
 
