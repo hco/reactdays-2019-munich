@@ -34,17 +34,17 @@ Array [
   <li>
     <article>
       Message 1
-      <cite>
+      <footer>
         AUTHOR 1
-      </cite>
+      </footer>
     </article>
   </li>,
   <li>
     <article>
       Message 2
-      <cite>
+      <footer>
         AUTHOR 2
-      </cite>
+      </footer>
     </article>
   </li>,
 ]
