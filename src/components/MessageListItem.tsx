@@ -3,7 +3,10 @@ import { Message } from '../domain/Message';
 
 interface Props extends Message {}
 
-export const MessageListItem = ({ message, author }: Props): JSX.Element => (
+export const MessageListItemComponent = ({
+  message,
+  author
+}: Props): JSX.Element => (
   <li>
     <article>
       {message}
@@ -12,4 +15,4 @@ export const MessageListItem = ({ message, author }: Props): JSX.Element => (
   </li>
 );
 
-export default MessageListItem;
+export default MessageListItemComponent;

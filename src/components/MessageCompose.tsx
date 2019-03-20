@@ -4,7 +4,7 @@ interface Props {
   onSubmit: (value: string) => void;
 }
 
-const MessageCompose = ({ onSubmit }: Props) => {
+export const MessageComposeComponent = ({ onSubmit }: Props) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (e: FormEvent) => {
@@ -25,4 +25,4 @@ const MessageCompose = ({ onSubmit }: Props) => {
   );
 };
 
-export default MessageCompose;
+export default MessageComposeComponent;

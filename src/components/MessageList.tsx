@@ -6,7 +6,7 @@ interface Props {
   messages: ReadonlyArray<Message>;
 }
 
-const MessageList = ({ messages }: Props): JSX.Element => {
+export const MessageListComponent = ({ messages }: Props): JSX.Element => {
   return (
     <ul>
       {messages.map(message => (
@@ -16,4 +16,4 @@ const MessageList = ({ messages }: Props): JSX.Element => {
   );
 };
 
-export default MessageList;
+export default MessageListComponent;
