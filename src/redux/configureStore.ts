@@ -35,6 +35,28 @@ type MessageActions = AddMessageAction;
 
 type Actions = MessageActions | InitAction;
 
+const waitFor = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+export const addMessage = (message: string) => async (dispatch, getState) => {
+  dispatch({ type: 'MESSAGE/BEFORE' });
+
+  try {
+    await waitFor(2500);
+
+    dispatch({
+      type: 'MESSAGE/ADD',
+      payload: {
+        id: String(Date.now()),
+        message,
+        author: 'Author',
+        date: Date.now()
+      }
+    });
+  } catch (e) {
+    dispatch({ type: 'UPS', error: e });
+  }
+};
+
 const reducer = (state = initialState, action: Actions): ApplicationState => {
   switch (action.type) {
     case 'MESSAGE/ADD':

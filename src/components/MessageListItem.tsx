@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Message } from '../domain/Message';
 
 interface Props extends Message {}
@@ -15,4 +15,4 @@ export const MessageListItemComponent = ({
   </li>
 );
 
-export default MessageListItemComponent;
+export default memo(MessageListItemComponent);

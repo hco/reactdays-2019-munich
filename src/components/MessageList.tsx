@@ -23,6 +23,7 @@ const getMessages = (
 ): ReadonlyArray<Message> => Object.values(messages);
 
 const mapStateToProps = (state: ApplicationState): Props => {
+  console.log('mapStateToProps in MessageList');
   return {
     messages: getMessages(state.messages)
   };
