@@ -3,6 +3,7 @@ import MessageList from './components/MessageList';
 import MessageCompose from './components/MessageCompose';
 import { Message } from './domain/Message';
 import { configureStore } from './redux/configureStore';
+import { Provider } from 'react-redux';
 
 // das machen wir eigentlich in einem useMemo...
 const store = configureStore();
@@ -39,10 +40,12 @@ export function App() {
   );
 
   return (
-    <main>
-      <MessageList messages={messages} />
-      <MessageCompose onSubmit={handleSubmit} />
-    </main>
+    <Provider store={store}>
+      <main>
+        <MessageList />
+        <MessageCompose onSubmit={handleSubmit} />
+      </main>
+    </Provider>
   );
 }
 

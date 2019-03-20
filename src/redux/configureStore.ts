@@ -2,7 +2,7 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Message } from '../domain/Message';
 
-interface ApplicationState {
+export interface ApplicationState {
   messages: Record<string, Message>;
   /*
   messages: {
@@ -31,7 +31,9 @@ interface InitAction {
   type: '@@INIT';
 }
 
-type Actions = AddMessageAction | InitAction;
+type MessageActions = AddMessageAction;
+
+type Actions = MessageActions | InitAction;
 
 const reducer = (state = initialState, action: Actions): ApplicationState => {
   switch (action.type) {
