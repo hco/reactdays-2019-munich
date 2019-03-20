@@ -23,7 +23,7 @@ test('<MessageListItem /> shows the author and message', () => {
     <MessageListItemComponent
       author="Christian"
       date={0}
-      message="Test Message"
+      message="Hallo Christian"
       id="0"
     />
   );
@@ -31,6 +31,8 @@ test('<MessageListItem /> shows the author and message', () => {
   // Act
 
   // Assert
-  expect(container).toHaveTextContent(/christian/i);
-  expect(container).toHaveTextContent('Test Message');
+  expect(container.getElementsByTagName('footer')[0]).toHaveTextContent(
+    /christian/i
+  );
+  expect(container).toHaveTextContent('Hallo Christian');
 });
