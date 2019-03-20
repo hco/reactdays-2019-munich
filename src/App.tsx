@@ -2,6 +2,10 @@ import React, { useState, useCallback } from 'react';
 import MessageList from './components/MessageList';
 import MessageCompose from './components/MessageCompose';
 import { Message } from './domain/Message';
+import { configureStore } from './redux/configureStore';
+
+// das machen wir eigentlich in einem useMemo...
+const store = configureStore();
 
 export function App() {
   const [messages, setMessages] = useState<ReadonlyArray<Message>>([
