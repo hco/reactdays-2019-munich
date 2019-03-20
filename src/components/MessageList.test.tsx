@@ -15,7 +15,7 @@ describe('<MessageList />', () => {
       },
       {
         id: '2',
-        message: 'Message 3',
+        message: 'Message 2',
         author: 'Author 2',
         date: 1
       }
