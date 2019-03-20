@@ -10,7 +10,7 @@ export const MessageListItemComponent = ({
   <li>
     <article>
       {message}
-      {author ? <cite>{author.toUpperCase()}</cite> : null}
+      {author ? <footer>{author.toUpperCase()}</footer> : null}
     </article>
   </li>
 );
